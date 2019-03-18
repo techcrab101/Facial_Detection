@@ -4,20 +4,19 @@ import numpy as np
 import argparse
 import os
 
-cap = cv2.VideoCapture(0)
-
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--path", required=True,
 	help="path to save image")
+ap.add_argument("-a", "--vpath", required=True,
+	help="path to open video")
 args = vars(ap.parse_args())
 
 path = args["path"]
+vid_path = args["vpath"]
 imgCount = len(os.listdir(path))
 
-
-print ('Press C to capture image')
 
 i = 0
 while True:
